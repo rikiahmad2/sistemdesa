@@ -1,3 +1,0 @@
-database : siwades.sql
-username : admin
-password : admin
