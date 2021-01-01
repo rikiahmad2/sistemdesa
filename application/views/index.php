@@ -48,7 +48,7 @@
                 <!-- Login Title -->
                 <div class="block-title">
                     <div class="block-options pull-right">
-                        <a href="daftar.php" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Buat akun baru"><i class="fa fa-plus"></i></a>
+                        <a href="#" class="btn btn-effect-ripple btn-primary" data-toggle="tooltip" data-placement="left" title="Fitur Buat Akun Dimatikan"><i class="fa fa-plus"></i></a>
                     </div>
                     <h2>Silahkan Login</h2>
                 </div>
@@ -89,7 +89,7 @@
 
             <!-- Footer -->
             <footer class="text-muted text-center animation-pullUp">
-                <small><span>2016</span> &copy; <a href="http://www.elfanrodhian.xyz">Elfan Rodh</a></small>
+                <small><span>2020</span> &copy; <a href="">Mufti</a></small>
             </footer>
             <!-- END Footer -->
         </div>

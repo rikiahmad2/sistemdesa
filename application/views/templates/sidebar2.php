@@ -101,7 +101,7 @@
                 <!-- Sidebar Extra Info -->
                 <div id="sidebar-extra-info" class="sidebar-content sidebar-nav-mini-hide">
                     <div class="text-center">
-                        <small><span>2016</span> &copy; <a href="http://www.elfanrodhian.xyz">Elfan Rodh</a></small>
+                        <small><span>2020</span> &copy; <a href="">Mufti</a></small>
                     </div>
                 </div>
                 <!-- END Sidebar Extra Info -->

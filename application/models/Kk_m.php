@@ -80,9 +80,12 @@ class Kk_m extends CI_Model {
     }
 
     public function selectwherePenduduk($id){
-        $query = $this->db->get_where('penduduk', array('nik' => $id));
-        return $query->row_array();
-    }
+       $query = $this->db->query("SELECT A.nama_agama, C.nama_klasifikasi, B.*  FROM agama A LEFT JOIN penduduk B ON A.id_agama = B.id_agama LEFT JOIN klasifikasi C ON 
+        B.id_klasifikasi = C.id_klasifikasi WHERE nik = '".$id."'");
+
+       $data = $query->row_array();
+       return $data;
+   }
 
     public function updatePenduduk($data, $id){
         $this->db->where("nik", $id);

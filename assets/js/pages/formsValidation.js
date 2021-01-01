@@ -39,7 +39,7 @@ var FormsValidation = function() {
                     },
                     'val-password': {
                         required: true,
-                        minlength: 5
+                        minlength: 2
                     },
                     'val-confirm-password': {
                         required: true,
@@ -83,11 +83,11 @@ var FormsValidation = function() {
                     'val-email': 'Please enter a valid email address',
                     'val-password': {
                         required: 'Masukkan password !',
-                        minlength: 'Password minimal 5 karakter !'
+                        minlength: 'Password minimal 2 karakter !'
                     },
                     'val-confirm-password': {
                         required: 'Masukkan Password !',
-                        minlength: 'Password minimal 5 karakter !',
+                        minlength: 'Password minimal 2 karakter !',
                         equalTo: 'Verfikasi Password Salah'
                     },
                     'register-terms': {

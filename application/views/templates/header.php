@@ -40,7 +40,7 @@
                         <strong>ADMINISTRATOR</strong>
                     </li>
                     <li>
-                        <a href="../pilihan.php?menu=7">
+                        <a href="<?=base_url('Home/profile')?>">
                             <i class="fa fa-pencil-square fa-fw pull-right"></i>
                             Profile
                         </a>
