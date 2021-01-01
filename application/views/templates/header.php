@@ -14,7 +14,7 @@
 
             <!-- Header Link -->
             <li class="hidden-xs animation-fadeInQuick">
-                <a href="../pilihan.php"><strong>SELAMAT DATANG DI SISTEM INFORMASI WARGA DESA</strong></a>
+                <a href="#"><strong>SELAMAT DATANG DI SISTEM INFORMASI WARGA DESA</strong></a>
             </li>
             <!-- END Header Link -->
         </ul>

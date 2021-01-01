@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="<?=base_url('assets/');?>css/themes.css">
     <!-- END Stylesheets -->
     <!-- Modernizr (browser feature detection library) -->
-    <script src="<?=base_url('assets/');?>js/vendor/modernizr-3.3.1.min.js"></script>
 </head>
 <body>
     <!-- Page Wrapper -->
@@ -113,7 +112,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="../pilihan.php?menu=6" class=""><i class="fa fa-share-alt sidebar-nav-icon">
+                                    <a href="<?=base_url('Home/chat'); ?>" class="<?= $active == "chat" ? "active" : ""; ?>"><i class="fa fa-share-alt sidebar-nav-icon">
                                     </i><span class="sidebar-nav-mini-hide">Chatting an</span>
                                 </a>
                                 </li>

@@ -20,6 +20,8 @@ var AppSocial = function() {
             chatForm
                 .find('form')
                 .submit(function(e){
+                    // Don't submit the message form
+                    e.preventDefault();
                     // Get text from chat input
                     chatMsg = chatInput.val();
 
@@ -43,8 +45,7 @@ var AppSocial = function() {
                         chatInput.val('');
                     }
 
-                    // Don't submit the message form
-                    e.preventDefault();
+                    
                 });
 
             // Open Chat window
@@ -74,16 +75,7 @@ var AppSocial = function() {
              * With Gmaps.js, Check out examples and documentation at http://hpneo.github.io/gmaps/examples.html
              */
 
-            // Initialize map
-            new GMaps({
-                div: '#gmap-checkin',
-                lat: 59.32,
-                lng: 17.97,
-                zoom: 15,
-                scrollwheel: false
-            }).addMarkers([
-                {lat: 59.32, lng: 17.97, title: 'Cafe-Bar', animation: google.maps.Animation.DROP, infoWindow: {content: '<strong>Cafe-Bar</strong>'}}
-            ]);
+            
         }
     };
 }();

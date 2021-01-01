@@ -93,6 +93,12 @@
 		}
 
 		public function logout(){
+			//offline kan
+			$nik = $this->session->userdata('nik');
+			$data['status'] = 0;
+			$this->Penduduk_m->logout($data,$nik);
+
+			//hancurkan session
 			$this->session->sess_destroy();
 			redirect('Home/');
 		}
@@ -132,6 +138,82 @@
 			$this->Kk_m->updatePenduduk($input,$id);
 			redirect('Home/');
 			
+		}
+
+		public function chat(){
+
+			$result['active'] = 'dashboard';
+			//Data User
+			$nik  = $this->session->userdata('nik');
+			$level  = $this->session->userdata('level');
+			$data['data'] = $this->Kk_m->selectwherePenduduk($nik);
+			$data['online'] = $this->Penduduk_m->selectOnlinePenduduk();
+			$data['offline'] = $this->Penduduk_m->selectOfflinePenduduk();
+			$data['ambil'] = $this->Penduduk_m->pesan();
+			$data['aksi'] = 'penduduk';
+
+
+			if($level == 'penduduk'){
+				//JIKA LEVEL PENDUDUK
+				$result['kk']	 = $this->Penduduk_m->selectwhere($nik);
+				$this->load->view('templates/sidebar2', $result);
+			}
+			else{
+				//JIKA LEVEL LAINNYA
+				$this->load->view('templates/sidebar', $result);
+			}
+			$this->load->view('templates/header', $data);
+			$this->load->view('chat/chat', $data);
+
+		}
+
+		public function getPesan(){
+			$ambil = $this->Penduduk_m->pesan();
+			$hasil = "";
+			foreach ($ambil as $ulangi){
+				if ($ulangi->nik == $this->session->userdata('nik')) {
+					$hasil .= "          
+					<div align='right'>
+					<p>
+					<span class='label label-info text-center'>"
+					.$ulangi->nama."<img src='".base_url('store/foto/'.$ulangi->foto.'')."' alt='Avatar' class='img-circle '>
+					</span><br>
+					<small class='muted'>(".$ulangi->waktu.")</small><br>
+					<small>&nbsp;".nl2br($ulangi->pesan)."</small>
+					</p>
+					</div>";    
+				}else{
+					$hasil .= "          
+					<div align='left'>
+					<p>
+					<span class='label label-warning text-center'>
+					<img src='".base_url('store/foto/'.$ulangi->foto.'')."' alt='Avatar' class='img-circle '>".$ulangi->nama."
+					</span><br>
+					<small class='muted'>(".$ulangi->waktu.")</small><br>
+					<small>&nbsp;".nl2br($ulangi->pesan)."</small>
+					</p>
+					</div>";
+				}
+			}
+			echo $hasil;
+		}
+
+		public function ambil(){
+			$nik  = $this->session->userdata('nik');
+			$ulangi['data']	 = $this->Penduduk_m->selectwhere($nik);
+			$ulangi['ambil'] = $this->Penduduk_m->pesan();
+			$this->load->view('chat/chat', $ulangi);
+
+		}
+
+		public function submitPesan(){
+			$data['nik']  = $this->session->userdata('nik');
+			$data['pesan'] = $this->input->post('pesan');
+			date_default_timezone_set('Asia/Jakarta');
+    		$data['waktu'] = date("d-m-Y H:i");
+			$this->Penduduk_m->kirim_pesan($data);
+			echo "terkirim";
+
 		}
 	}
 ?>

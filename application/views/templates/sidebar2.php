@@ -82,7 +82,7 @@
                                 </li>
 
                                 <li>
-                                    <a href="../pilihan.php?menu=6" class=""><i class="fa fa-share-alt sidebar-nav-icon">
+                                    <a href="<?=base_url('Home/chat'); ?>" class="<?= $active == "chat" ? "active" : ""; ?>"><i class="fa fa-share-alt sidebar-nav-icon">
                                     </i><span class="sidebar-nav-mini-hide">Chatting an</span>
                                 </a>
                                 </li>
